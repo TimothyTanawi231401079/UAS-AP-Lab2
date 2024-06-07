@@ -40,7 +40,7 @@ int acak(int min, int max) {
 
 void judul() {
     cout << "===================================" << endl;
-    cout << "    SELAMAT DATANG DI PROGRAM UNDIAN    " << endl;
+    cout << " SELAMAT DATANG DI PROGRAM UNDIAN    " << endl;
     cout << "===================================" << endl;
 }
 void daftar(){
@@ -98,7 +98,7 @@ void daftar(){
     hadiah[5].rom = 512;
     hadiah[5].baterai = 58;
     hadiah[5].bobot = 1.3;
-} 
+}
 void tampilkanRoda(const vector<int>& angka, int h) {
     for (int i = 0; i < angka.size(); ++i) {
         if (i == h) {
@@ -136,38 +136,66 @@ main() {
     int jumlahPeserta, nomorPilihan;
     int count = -1;
 
-    char pilihanBalik;
+    char pilihanBalik, pilihan;
     daftar();
+    kembali : 
     judul();
+
+    cout << endl;
+
+    cout << "1. Daftar Hadiah" << endl;
+    cout << "2. Mulai Putar Roda" << endl;
+    cout << "Masukkan pilihan Anda : "; 
+    cin >> pilihan;
+
+    if (pilihan == '1'){   
+        system("cls");
+        for (int i = 0; i < 6; i++){
+            cout << "HADIAH KE - " << i+1 << endl << endl;
+            output(hadiah[i]);
+            cout << endl;
+        }
+        system("pause");
+        system("cls");
+
+        goto kembali;
+    }
+    else if (pilihan == '2'){
+        system("cls");
+        cout << "Masukkan jumlah peserta: ";
+        cin >> jumlahPeserta;
+        vector<int> angka;
+        for (int i = 1; i <= jumlahPeserta; ++i) {
+            angka.push_back(i);
+        }
+        balik :
+        count += 1;
+        cout << "HADIAH KE - " << count + 1 << endl << endl;
+        cout << "Pilih angka dari 1 hingga " << jumlahPeserta << ": ";
+        cin >> nomorPilihan;
+
+        int nomorPemenang = putarRoda(angka);
+        if (nomorPilihan == nomorPemenang) tampilkanPemenang(nomorPemenang, count);
+        else cout << "Maaf, Anda kurang beruntung." << endl;
+        cout<< "(Alamat nomor Pemenang di memori : " << &nomorPemenang <<")" << endl << endl;
     
-    cout << "Masukkan jumlah peserta: ";
-    cin >> jumlahPeserta;
-
-    vector<int> angka;
-    for (int i = 1; i <= jumlahPeserta; ++i) {
-        angka.push_back(i);
-    }
-    balik :
-    count += 1;
-    cout << "HADIAH KE - " << count + 1 << endl << endl;
-    cout << "Pilih angka dari 1 hingga " << jumlahPeserta << ": ";
-    cin >> nomorPilihan;
-
-    int nomorPemenang = putarRoda(angka);
-    if (nomorPilihan == nomorPemenang) tampilkanPemenang(nomorPemenang, count);
-    else cout << "Maaf, Anda kurang beruntung." << endl;
-    cout<< "(Alamat nomor Pemenang di memori : " << &nomorPemenang <<")" << endl << endl;
-   
-    cout << "Apakah Anda ingin mengulang? (y/n) "; 
-    cin >> pilihanBalik; 
-    if(pilihanBalik == 'Y' || pilihanBalik == 'y') {
-        if (count > 4) {
-            cout << "Maaf, hadiah undian sudah habis" << endl;
+        cout << "Apakah Anda ingin mengulang? (y/n) "; 
+        cin >> pilihanBalik; 
+        if(pilihanBalik == 'Y' || pilihanBalik == 'y') {
+            if (count > 4) {
+                cout << "Maaf, hadiah undian sudah habis" << endl;
+            }
+            else {
+                system("cls");
+                goto balik;
+            }
         }
-        else {
-            system("cls");
-            goto balik;
-        }
+        return 0;
     }
-    return 0;
+    else {
+        cout << "Pilihan Anda tidak valid. Silahkan pilih kembali." << endl;
+        system("pause");
+        system("cls");
+        goto kembali;
+    }
 }
