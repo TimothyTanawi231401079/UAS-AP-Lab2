@@ -11,3 +11,6 @@
 ![undian cpp - hasil (habis)](https://github.com/TimothyTanawi231401079/UAS-AP-Lab2/assets/161852217/6fee0e3e-6e88-4eb0-bdb8-ddc9de10cc7a)
 ![undian cpp - hasil (dapat)](https://github.com/TimothyTanawi231401079/UAS-AP-Lab2/assets/161852217/77748a54-58f6-4dcf-8768-beea3bf2dca8)
 
+Video Presentasi
+
+https://drive.google.com/drive/folders/1-wKCG8_nQLbWTnXLnwWsMd1ZufnwUU6c?usp=drive_link
