@@ -25,12 +25,12 @@ void output (spec a){
     cout<<"RAM: "<<a.ram<<" GB"<<endl;
     cout<<"ROM: "<<a.rom<<" GB"<<endl;
     if (a.tipe == "Handphone") {
-        cout<<"Battery: "<<a.baterai<<" mAh"<<endl;
+        cout<<"Baterai: "<<a.baterai<<" mAh"<<endl;
         cout<<"Berat: "<<a.bobot<<" gr"<<endl;
 
     }
     else if(a.tipe == "Laptop") {
-        cout<<"Battery: "<<a.baterai<<" Wh Li-ion"<<endl;
+        cout<<"Baterai: "<<a.baterai<<" Wh Li-ion"<<endl;
         cout<<"Berat: "<<a.bobot<<" kg"<<endl;
     }
 }
